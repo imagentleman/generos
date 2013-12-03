@@ -1,79 +1,55 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="utf-8">
+  <title>El Género del dinero</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,100,700' rel='stylesheet' type='text/css'>
+  <style>
+  html{font-size:10px}body{margin:0 auto;width:90%;font-family:Roboto}h1{margin:2rem;font-size:4rem}#chart{margin-left:-40px}.guide{stroke:#00a3ff}.dot{stroke:rgba(0,0,0,0);stroke-width:5px;opacity:.9;transition:stroke .4s}.dot:hover{stroke:#b4b4b4}.axis path,.axis line{fill:none;stroke:#f5f5f5;shape-rendering:crispEdges}.label,.tick{fill:#ccc;font-size:1.5rem}.year.label{font:400 88px "Roboto";fill:#ddd}.year.label.active{fill:#00a3ff}.overlay{fill:none;pointer-events:all;cursor:ew-resize}.week_desc{font-size:2rem;fill:#333}.gastos{font-size:4.2rem;font-weight:100;fill:#aaa}.female_bar{fill:#65da81}.male_bar{fill:#00a3ff}.femenino_label,.masculino_label{font-weight:300;font-size:4.2rem;fill:#333}#sidebar{background-color:#74c476;position:absolute;top:0;right:0;font-size:2rem;color:#FFF;padding:4rem 0;line-height:4rem;font-weight:100}#sidebar a{display:block;cursor:pointer;padding:0 2rem;transition:all .3s}#sidebar a:hover,.activo{background-color:#f5f5f5;color:#333}#descripcion{margin:3rem 0;-webkit-column-count:2;-moz-column-count:2;column-count:2;-webkit-column-gap:14rem;-moz-column-gap:14rem;column-gap:14rem;line-height:1.48em;font-size:1.8rem;color:#333}.tip{font-size:.9rem;fill:#ddd;font-style:italic;transition:all .3s}.hide{opacity:0}
+  </style>
+</head>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Generos : " />
+<h1>El Género del dinero</h1>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+<div id="chart"></div>
 
-    <title>Generos</title>
-  </head>
+<div id="sidebar">
+  <a id="todos" class="activo cat">Todos</a>
+  <a id="auto" class="cat">Autos</a>
+  <a id="bar" class="cat">Bar y Restaurantes</a>
+  <a id="moda" class="cat">Moda</a>
+  <a id="comida" class="cat">Comida</a>
+  <a id="salud" class="cat">Salud</a>
+  <a id="hogar" class="cat">Hogar</a>
+  <a id="hotel" class="cat">Hotelería</a>
+  <a id="deportes" class="cat">Deportes y Juguetería</a>
+  <a id="tecnologia" class="cat">Tecnología</a>
+  <a id="transporte" class="cat">Transporte</a>
+  <a id="viajes" class="cat">Viajes</a>
+  <a id="belleza" class="cat">Bienestar y Belleza</a>
+</div>
 
-  <body>
+<div id="descripcion">
+<p>Esta visualización muestra los gastos por género entre el período de Nov. de 2012 y Abril de 2013, de las ciudades de Barcelona y Madrid.</p>
+<p>Cada círculo representa un rango de edad y su tamaño es proporcional al número de transacciones hechas. Si un círculo se encuentra por debajo de la línea diagonal, indica que los hombres gastan más en esa demografía. De forma similar, si el círculo está por encima, indica que las mujeres gastan más.</p>
+<p>También se muestran 2 barras con la sumatoria de los gastos de todos los rangos de edad en la semana, separados por género.</p>
+<p>Finalmente, se puede elegir alguna subcategoría para restringuir las transacciones que se muestran. La escala se mantiene entre todas las visualizaciones, de forma que sea evidente que tan insignificantes o que tan importantes, son los gastos de la categoría (transporte vs el resto).</p>
+<p>Los datos provienen del API de BBVA usando la latitud y longitud proporcionadas por Google Search, con Zoom de 2 (región de 450x550m) y profundidad de 2 (25 regiones vecinas).</p>
+</div>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/imagentleman/generos">View on GitHub</a>
-
-          <h1 id="project_title">Generos</h1>
-          <h2 id="project_tagline"></h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/imagentleman/generos/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/imagentleman/generos/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Generos maintained by <a href="https://github.com/imagentleman">imagentleman</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
-</html>
+<script src="d3.v3.min.js"></script>
+<script>
+function x(b){return b.m_expenses}function y(b){return b.f_expenses}function radius(b){return b.payments}function color(b){return b.region}function key(b){return b.name}
+var margin={top:39,right:39,bottom:39,left:78},height=0.9*window.innerHeight-3*document.querySelector("h1").clientHeight,width=height,xScale=d3.scale.linear().domain([0,500]).range([0,width]),yScale=d3.scale.linear().domain([0,500]).range([height,0]),radiusScale=d3.scale.sqrt().domain([0,3E5]).range([0,100]),colorScale=d3.scale.category20c(),xAxis=d3.svg.axis().orient("bottom").scale(xScale),yAxis=d3.svg.axis().scale(yScale).orient("left"),svg=d3.select("#chart").append("svg").attr("width",width+
+margin.left+margin.right).attr("height",height+margin.top+margin.bottom).append("g").attr("transform","translate("+margin.left+","+margin.top+")"),svg2=d3.select("#chart").append("svg").attr("width",width+30).attr("height",height+margin.top+margin.bottom).append("g").attr("transform","translate("+margin.left+","+margin.top+")");svg.append("line").attr("class","guide").attr("x1",0).attr("y1",height).attr("x2",width).attr("y2",0);
+svg.append("g").attr("class","x axis").attr("transform","translate(0,"+height+")").call(xAxis);svg.append("g").attr("class","y axis").call(yAxis);svg.append("text").attr("class","x label").attr("text-anchor","end").attr("x",width).attr("y",height-6).text("Gastos G. Masculino (Miles EUR/semana)");svg.append("text").attr("class","y label").attr("text-anchor","end").attr("y",6).attr("dy",".75em").attr("transform","rotate(-90)").text("Gastos G. Femenino (Miles EUR/semana)");
+var tip=svg2.append("text").attr("class","tip").attr("y",0).attr("x",0).text("Mueve el rat\u00f3n sobre la semana para controlar la animaci\u00f3n."),label=svg2.append("text").attr("class","year label").attr("y",93).attr("x",0).text("Semana 01"),week_desc=svg2.append("text").attr("class","week_desc").attr("y",150).attr("x",0),gastos_label=svg2.append("text").attr("class","gastos").attr("y",270).text("Gastos por G\u00e9nero"),femenino_label=svg2.append("text").attr("class","femenino_label").attr("y",
+340).text("Femenino"),female_bar=svg2.append("rect").attr("class","female_bar").attr("y",350).attr("width",200).attr("height",20),masculino_label=svg2.append("text").attr("class","masculino_label").attr("y",410).text("Masculino"),male_bar=svg2.append("rect").attr("class","male_bar").attr("y",420).attr("width",250).attr("height",20),cache=[],prev_year=0,weeks={1:"201244",2:"201245",3:"201246",4:"201247",5:"201248",6:"201249",7:"201250",8:"201251",9:"201252",10:"201301",11:"201302",12:"201303",13:"201304",
+14:"201305",15:"201306",16:"201307",17:"201308",18:"201309",19:"201310",20:"201311",21:"201312",22:"201313",23:"201314"},week_names={1:"Oct. 29 - Nov. 4 (2012)",2:"Nov. 5 - Nov. 11 (2012)",3:"Nov. 12 - Nov. 18 (2012)",4:"Nov. 19 - Nov. 25 (2012)",5:"Nov. 26 - Dic. 2 (2012)",6:"Dic. 3 - Dic. 9 (2012)",7:"Dic. 10 - Dic. 16 (2012)",8:"Dic. 17 - Dic. 23 (2012)",9:"Dic. 24 - Dic. 30 (2012)",10:"Dic. 31 - Ene. 6 (2013)",11:"Ene. 7 - Ene. 13 (2013)",12:"Ene. 14 - Ene. 20 (2013)",13:"Ene. 21 - Ene. 27 (2013)",
+14:"Ene. 28 - Feb. 3 (2013)",15:"Feb. 4 - Feb. 10 (2013)",16:"Feb. 11 - Feb. 17 (2013)",17:"Feb. 18 - Feb. 24 (2013)",18:"Feb. 25 - Mar. 3 (2013)",19:"Mar. 4 - Mar. 10 (2013)",20:"Mar. 11 - Mar. 17 (2013)",21:"Mar. 18 - Mar. 24 (2013)",22:"Mar. 25 - Mar. 31 (2013)",23:"Abr. 1 - Abr. 7 (2013)"};
+[].forEach.call(document.querySelectorAll(".cat"),function(b){b.addEventListener("click",function(b){document.querySelector(".activo").classList.remove("activo");b.target.classList.add("activo");loader("spain_"+b.target.id+".json")},!1)});loader("spain_todos.json");
+function loader(b){d3.json(b,function(b){function h(a){a.attr("cx",function(a){return xScale(x(a))}).attr("cy",function(a){return yScale(y(a))}).attr("r",function(a){return radiusScale(radius(a))})}function k(a,d){return radius(d)-radius(a)}function l(){function a(){m(d.invert(d3.mouse(this)[0]));document.querySelector(".tip").classList.add("hide")}var d=d3.scale.linear().domain([1,23]).range([1,e.width]).clamp(!0);svg.transition().duration(0);q.on("mouseover",function(){label.classed("active",!0)}).on("mouseout",
+function(){label.classed("active",!1)}).on("mousemove",a).on("touchmove",a)}function m(a){n.data(p(a),key).call(h).sort(k);a=Math.round(a);if(prev_year!==a){label.text("Semana "+a);week_desc.text(week_names[a]);for(var d=0,b=0,c=0;14>c;c++)cache[c]&&(cache[c].F_expenses[a-1]&&(d+=parseInt(cache[c].F_expenses[a-1][1])),cache[c].M_expenses[a-1]&&(b+=parseInt(cache[c].M_expenses[a-1][1])));console.log(d);female_bar.transition().attr("width",d/5);male_bar.transition().attr("width",b/5);prev_year=a}}function p(a){return b.map(function(b){return{name:b.name,
+region:b.name,f_expenses:g(b.F_expenses,a),m_expenses:g(b.M_expenses,a),payments:g(b.payments,a)}})}function g(a,b){if(0===a.length)return console.log(a,b),0;var f=r.left(a,b,0,a.length-1),c=a[f];if(0<f){var f=a[f-1],e=(b-c[0])/(f[0]-c[0]);return c[1]*(1-e)+f[1]*e}return c[1]}cache=b;[].forEach.call(document.querySelectorAll(".dots"),function(a){a.parentNode.removeChild(a)});var r=d3.bisector(function(a){return a[0]}),n=svg.append("g").attr("class","dots").selectAll(".dot").data(p(1)).enter().append("circle").attr("class",
+"dot").style("fill",function(a){return colorScale(color(a))}).call(h).sort(k);n.append("title").text(function(a){return a.name});var e=label.node().getBBox(),q=svg2.append("rect").attr("class","overlay").attr("x",0).attr("y",0).attr("width",e.width+27).attr("height",e.height).on("mouseover",l);svg.transition().duration(23E3).ease("linear").tween("year",function(){var a=d3.interpolateNumber(1,23);return function(b){m(a(b))}}).each("end",l)})};
+</script>
